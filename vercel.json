@@ -1,0 +1,6 @@
+{
+  "buildCommand": "cd sites/sciml-bootcamp && npm run build",
+  "outputDirectory": "sites/sciml-bootcamp/out",
+  "installCommand": "npm install",
+  "framework": null
+}
