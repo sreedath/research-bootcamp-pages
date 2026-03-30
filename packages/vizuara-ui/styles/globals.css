@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+@import "tailwindcss";
+
+/* ===== LIGHT THEME (default) ===== */
+:root {
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+  --card: #f7f7f8;
+  --card-hover: #efefef;
+  --border: #e2e2e5;
+  --muted: #f0f0f2;
+  --muted-foreground: #6b6b76;
+  --primary: #00a854;
+  --primary-foreground: #ffffff;
+  --secondary: #0099b8;
+  --accent: #0099b8;
+  --ring: #00a854;
+  --glow-opacity: 0.08;
+  --grid-line-color: rgba(0, 0, 0, 0.04);
+  --dot-color: rgba(0, 0, 0, 0.06);
+}
+
+/* ===== DARK THEME ===== */
+.dark {
+  --background: #0a0a0a;
+  --foreground: #f2f2f2;
+  --card: #121212;
+  --card-hover: #1a1a1a;
+  --border: #262626;
+  --muted: #1f1f1f;
+  --muted-foreground: #a3a3a3;
+  --primary: #00d46a;
+  --primary-foreground: #000000;
+  --secondary: #00c8e6;
+  --accent: #00c8e6;
+  --ring: #00d46a;
+  --glow-opacity: 0.15;
+  --grid-line-color: rgba(255, 255, 255, 0.03);
+  --dot-color: rgba(255, 255, 255, 0.07);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-hover: var(--card-hover);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-ring: var(--ring);
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-serif: "Instrument Serif", serif;
+}
+
+* {
+  border-color: var(--border);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Neon gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glow effects */
+.glow-green {
+  box-shadow: 0 0 20px rgba(0, 212, 106, var(--glow-opacity)), 0 0 60px rgba(0, 212, 106, calc(var(--glow-opacity) / 3));
+}
+
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(0, 200, 230, var(--glow-opacity)), 0 0 60px rgba(0, 200, 230, calc(var(--glow-opacity) / 3));
+}
+
+.glow-green-strong {
+  box-shadow: 0 0 30px rgba(0, 212, 106, calc(var(--glow-opacity) * 1.7)), 0 0 80px rgba(0, 212, 106, calc(var(--glow-opacity) * 0.7));
+}
+
+/* Hover-only glow for buttons */
+.hover-glow-green {
+  transition: box-shadow 0.3s ease;
+}
+.hover-glow-green:hover {
+  box-shadow: 0 0 25px rgba(0, 212, 106, var(--glow-opacity)), 0 0 50px rgba(0, 212, 106, calc(var(--glow-opacity) / 2));
+}
+
+/* Grid pattern background */
+.grid-pattern {
+  background-image:
+    linear-gradient(var(--grid-line-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line-color) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Dot pattern background */
+.dot-pattern {
+  background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
+}

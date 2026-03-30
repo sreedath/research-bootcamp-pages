@@ -1,0 +1,45 @@
+@import "@vizuara/ui/styles/globals.css";
+@source "../../../packages/vizuara-ui/components";
+@source "../../../packages/vizuara-ui/utils";
+
+/* SciML Theme: Deep Crimson + Warm Slate */
+:root {
+  --primary: #dc2626;
+  --primary-foreground: #ffffff;
+  --secondary: #9f1239;
+  --accent: #9f1239;
+  --ring: #dc2626;
+  --glow-opacity: 0.1;
+}
+
+.dark {
+  --primary: #f87171;
+  --primary-foreground: #000000;
+  --secondary: #fb7185;
+  --accent: #fb7185;
+  --ring: #f87171;
+  --glow-opacity: 0.18;
+}
+
+/* Override glow effects for crimson */
+.glow-green {
+  box-shadow: 0 0 20px rgba(220, 38, 38, var(--glow-opacity)),
+    0 0 60px rgba(220, 38, 38, calc(var(--glow-opacity) / 3));
+}
+
+.glow-green-strong {
+  box-shadow: 0 0 30px rgba(220, 38, 38, calc(var(--glow-opacity) * 1.7)),
+    0 0 80px rgba(220, 38, 38, calc(var(--glow-opacity) * 0.7));
+}
+
+.hover-glow-green:hover {
+  box-shadow: 0 0 25px rgba(220, 38, 38, var(--glow-opacity)),
+    0 0 50px rgba(220, 38, 38, calc(var(--glow-opacity) / 2));
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
