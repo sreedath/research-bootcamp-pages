@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" width="300" height="100">
+  <style>
+    .wordmark { font-family: Georgia, "Times New Roman", serif; font-weight: 700; }
+    .a { fill: #222; } .r { fill: #222; } .x { fill: #b31b1b; } .i { fill: #222; } .v { fill: #222; }
+    .bar { fill: #b31b1b; }
+  </style>
+  <rect x="20" y="75" width="260" height="4" class="bar"/>
+  <text x="150" y="60" text-anchor="middle" class="wordmark" font-size="56">
+    <tspan class="a">a</tspan><tspan class="r">r</tspan><tspan class="x">X</tspan><tspan class="i">i</tspan><tspan class="v">v</tspan>
+  </text>
+</svg>

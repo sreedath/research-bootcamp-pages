@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" width="300" height="100">
+  <rect width="300" height="100" fill="#f8fafc" stroke="#cbd5e1" stroke-dasharray="4 4"/>
+  <text x="150" y="50" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="22" fill="#0f172a">escience</text>
+  <text x="150" y="72" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="10" fill="#64748b">replace with official logo</text>
+</svg>

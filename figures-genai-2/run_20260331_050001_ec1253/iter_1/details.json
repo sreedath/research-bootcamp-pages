@@ -1,0 +1,7 @@
+{
+  "description": "**Figure Title:** Architecture of a Robust RAG Pipeline for Information Retrieval and Generation\n\n**Overall Layout:**\nThe diagram follows a clear left-to-right flow, structured into two primary, horizontally stacked logical pipelines: the \"Indexing Pipeline\" at the top and the \"Query-time Pipeline\" below it. An \"Evaluation Panel\" is positioned to the right of both pipelines, indicating a monitoring or feedback loop. The entire diagram is set against a pristine white background, maintaining a clean academic aesthetic.\n\n**Components:**\n\n**A. Indexing Pipeline (Top Section):**\nThis section is visually grouped within a large, subtly filled rounded rectangle with a gentle wash of soft mint green. Its border is a fine, solid line in soft charcoal gray.\n\n1.  **Raw Documents (Input):",
+  "critique": {
+    "critic_suggestions": [],
+    "revised_description": null
+  }
+}

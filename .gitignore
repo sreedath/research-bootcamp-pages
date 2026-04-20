@@ -9,3 +9,4 @@ build/
 *.log
 shared-assets/paperbanana-gen/*/run_*/
 .vercel
+scripts/__pycache__/

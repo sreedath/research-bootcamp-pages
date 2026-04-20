@@ -1,0 +1,6 @@
+{
+  "framework": null,
+  "installCommand": "cd ../.. && npm install",
+  "buildCommand": "next build",
+  "outputDirectory": "out"
+}

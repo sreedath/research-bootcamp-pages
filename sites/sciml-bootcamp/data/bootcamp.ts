@@ -1,5 +1,12 @@
 import type { BootcampConfig } from "@vizuara/ui";
-import type { ShowcaseSectionConfig, CertificateSectionConfig } from "@vizuara/ui";
+import type {
+  ShowcaseSectionConfig,
+  CertificateSectionConfig,
+  VenuesMarqueeConfig,
+  MarketStatsSectionConfig,
+  NextCohortPopupConfig,
+  ContactSectionConfig,
+} from "@vizuara/ui";
 import {
   INSTRUCTOR_SREEDATH,
   INSTRUCTOR_RAJ,
@@ -91,12 +98,14 @@ export const bootcampConfig: BootcampConfig = {
     subtitle:
       "Work on impactful SciML research projects. Present at top-tier venues. Convert projects into publications. Build physics-grounded ML models using Julia and the SciML ecosystem.",
     scheduleItems: [
-      { iconName: "Clock", text: "15 Topics", color: "text-secondary" },
-      { iconName: "Code2", text: "Julia Programming", color: "text-primary" },
-      { iconName: "FlaskConical", text: "Research Projects", color: "text-secondary" },
+      { iconName: "Users", text: "100+ Participants", color: "text-primary" },
+      { iconName: "BookOpen", text: "20+ Publications", color: "text-secondary" },
+      { iconName: "Clock", text: "15+ Topics", color: "text-primary" },
+      { iconName: "Code2", text: "Julia Programming", color: "text-secondary" },
+      { iconName: "FlaskConical", text: "Research Projects", color: "text-primary" },
     ],
     stats: [
-      { value: "500+", label: "Students Trained" },
+      { value: "100+", label: "Students Trained" },
       { value: "8+", label: "Hands-on Sessions" },
       { value: "3", label: "MIT/Purdue PhDs" },
       { value: "100%", label: "Research-Grade Content" },
@@ -136,14 +145,14 @@ export const bootcampConfig: BootcampConfig = {
         color: "text-primary",
       },
       {
-        iconName: "Shield",
+        iconName: "Brain",
         title: "Physics-Informed Neural Networks",
         description:
           "PINNs embed differential equations, conservation laws, and boundary conditions directly into the neural network's loss function. The network learns to satisfy both the data and the governing physics simultaneously, producing solutions that are physically consistent by construction.",
         color: "text-secondary",
       },
       {
-        iconName: "Zap",
+        iconName: "TrendingUp",
         title: "Neural ODEs and Universal Differential Equations",
         description:
           "Neural ODEs replace ODE right-hand sides with neural networks for fully data-driven dynamics. UDEs go further: they keep known physics terms intact while using neural networks only for unknown components, enabling symbolic recovery of closed-form equations.",
@@ -285,7 +294,7 @@ export const bootcampConfig: BootcampConfig = {
           "The SciML ecosystem overview",
         ],
         exercise: "Write your first Julia program and explore the REPL",
-        instructor: "Dr. Sreedath Panat",
+        instructor: "Dr. Raj Dandekar",
       },
       {
         day: 4,
@@ -298,7 +307,7 @@ export const bootcampConfig: BootcampConfig = {
           "Building your first ODE in Julia using hands-on examples",
           "Numerical solvers and sensitivity analysis",
         ],
-        exercise: "Model a predator-prey system (Lotka-Volterra equations) in Julia",
+        exercise: "Model a SIR epidemiology equations in Julia",
         instructor: "Dr. Raj Dandekar",
       },
       {
@@ -312,8 +321,8 @@ export const bootcampConfig: BootcampConfig = {
           "Numerical discretization methods",
           "Boundary and initial conditions",
         ],
-        exercise: "Solve a 1D heat equation numerically in Julia",
-        instructor: "Dr. Sreedath Panat",
+        exercise: "Solve a 1D Schrodinger equation numerically in Julia",
+        instructor: "Dr. Raj Dandekar",
       },
       {
         day: 6,
@@ -327,7 +336,7 @@ export const bootcampConfig: BootcampConfig = {
           "Building neural networks in Julia with Lux.jl",
         ],
         exercise: "Train a neural network to approximate a known physical function",
-        instructor: "Dr. Rajat Dandekar",
+        instructor: "Dr. Raj Dandekar",
       },
       {
         day: 7,
@@ -354,7 +363,7 @@ export const bootcampConfig: BootcampConfig = {
           "Solving forward and inverse problems with PINNs",
           "Debugging and optimizing PINN training",
         ],
-        exercise: "Build a PINN to solve a 1D heat equation with noisy data",
+        exercise: "Build a PINN to solve a 1D wave equation",
         instructor: "Dr. Raj Dandekar",
       },
       {
@@ -369,7 +378,7 @@ export const bootcampConfig: BootcampConfig = {
           "Comparison with discrete residual networks",
         ],
         exercise: "Understand the adjoint method on a toy dynamical system",
-        instructor: "Dr. Rajat Dandekar",
+        instructor: "Dr. Raj Dandekar",
       },
       {
         day: 10,
@@ -382,8 +391,8 @@ export const bootcampConfig: BootcampConfig = {
           "Implementing a Neural ODE model end-to-end",
           "Training on time-series data",
         ],
-        exercise: "Train a Neural ODE on synthetic dynamical system data",
-        instructor: "Dr. Rajat Dandekar",
+        exercise: "Train a Neural ODE on SIR system data",
+        instructor: "Dr. Raj Dandekar",
       },
       {
         day: 11,
@@ -443,7 +452,7 @@ export const bootcampConfig: BootcampConfig = {
           "Scientific visualization and publication-ready figures",
         ],
         exercise: "Simulate and visualize particle orbits near a Schwarzschild black hole using SciML",
-        instructor: "Dr. Rajat Dandekar",
+        instructor: "Dr. Raj Dandekar",
       },
       {
         day: 15,
@@ -556,134 +565,124 @@ export const bootcampConfig: BootcampConfig = {
 
   researchPapers: {
     label: "Our Research",
-    title: "Sample Papers From Our Research",
+    title: "Recent Papers From Our Research",
     subtitle:
-      "A selected few SciML papers from our research over the past years. Students in the Researcher and Industry Professional plans work on similar projects aimed at publication.",
+      "A few recent SciML papers from our research over the past years. Students in the Researcher and Industry Professional plans work on similar projects aimed at publication.",
     papers: [
       {
         title:
-          "A Machine Learning Aided Global Diagnostic and Comparative Tool to Assess Effect of Quarantine Control in COVID-19 Spread",
+          "Cross-Country Macroeconomic Forecasting Using Physics-Informed Neural Networks and Universal Differential Equations in Julia",
         authors:
-          "Raj Dandekar, Chris Rackauckas, George Barbastathis",
-        venue: "Cell Patterns",
-        year: 2020,
+          "Vrishank Sai Anand, Prathamesh Dinesh Joshi, Rajat Dandekar, Raj Dandekar, Sreedath Panat",
+        venue: "JuliaCon",
+        year: 2026,
         abstract:
-          "Developed a globally applicable diagnostic COVID-19 model by augmenting the classical SIR epidemiological model with a neural network module. All parameters were optimized via machine learning algorithms, creating a hybrid physics-ML approach to pandemic modeling.",
-        arxivUrl: "https://arxiv.org/abs/2003.14077",
-        codeUrl: "https://github.com/RajDandekar/MIT-Global-COVID-Modelling-Project-1",
-        tags: ["UDEs", "Epidemiology", "COVID-19"],
+          "A Julia-based study applying Physics-Informed Neural Networks and Universal Differential Equations to cross-country macroeconomic forecasting, combining economic theory with data-driven SciML methods.",
+        thumbnail: "/papers/macroeconomic-pinn.png",
+        tags: ["PINNs", "UDEs", "Macroeconomics"],
       },
       {
-        title: "Bayesian Neural Ordinary Differential Equations",
+        title:
+          "Fourier Feature Preconditioning of PINNs for High-Frequency Nonlinear Reaction-Diffusion Dynamics",
         authors:
-          "Raj Dandekar, Vaibhav Dixit, Mohamed Tarek, Aslan Garcia-Valadez, Chris Rackauckas",
-        venue: "Languages for Inference (LAF1)",
-        year: 2021,
+          "Bramha Nimbalkar, Prathamesh Dinesh Joshi, Raj Dandekar, Rajat Dandekar, Sreedath Panat",
+        venue: "JuliaCon",
+        year: 2026,
         abstract:
-          "Integrates Bayesian learning frameworks with Neural ODEs to robustly quantify uncertainty. Demonstrates probabilistic identification of model specification in partially-described dynamical systems using universal ordinary differential equations.",
-        arxivUrl: "https://arxiv.org/abs/2012.07244",
-        codeUrl: "https://github.com/RajDandekar/MSML21_BayesianNODE",
-        tags: ["Neural ODEs", "Bayesian ML", "Uncertainty"],
+          "Introduces Fourier feature preconditioning for Physics-Informed Neural Networks, improving learning of high-frequency nonlinear reaction-diffusion dynamics where standard PINNs struggle.",
+        thumbnail: "/papers/fourier-pinn.png",
+        tags: ["PINNs", "Fourier Features", "Reaction-Diffusion"],
+      },
+      {
+        title:
+          "When Does Physics Help? A Systematic Study of Physics-Guided Learning for Robotic Contact Dynamics",
+        authors:
+          "Chinmayee Prabhakar, Prathamesh Dinesh Joshi, Raj Dandekar, Rajat Dandekar, Sreedath Panat",
+        venue: "ICLR Workshop on AI and Partial Differential Equations",
+        year: 2026,
+        abstract:
+          "A systematic study of physics-guided learning for robotic contact dynamics, analyzing when embedding physical priors into neural network models yields measurable gains over purely data-driven baselines.",
+        arxivUrl: "https://openreview.net/pdf?id=NsDwAHwNLB",
+        thumbnail: "/papers/physics-guided-robotics.png",
+        tags: ["PINNs", "Robotics", "Contact Dynamics"],
       },
       {
         title:
           "A Study of Universal ODE Approaches to Predicting Soil Organic Carbon",
         authors:
           "Satyanarayana Raju G V V, Prathamesh Dinesh Joshi, Raj Abhijit Dandekar, Rajat Dandekar, Sreedath Panat",
-        venue: "arXiv",
-        year: 2025,
+        venue: "EGU",
+        year: 2026,
         abstract:
-          "Applies Universal Differential Equations to predict soil organic carbon dynamics, demonstrating how SciML methods can be used in environmental science to combine known soil chemistry with data-driven learning of unknown processes.",
-        arxivUrl: "https://arxiv.org/abs/2509.24306",
+          "Applies Universal Differential Equations to predict soil organic carbon dynamics, combining known soil chemistry with data-driven learning of unknown processes for environmental science.",
+        arxivUrl: "https://arxiv.org/pdf/2509.24306",
         thumbnail: "/papers/soil-carbon.png",
         tags: ["UDEs", "Environmental Science", "Soil Carbon"],
       },
       {
-        title:
-          "BULL-ODE: Bullwhip Learning with Neural ODEs and Universal Differential Equations under Stochastic Demand",
+        title: "CLIMASIM — Climate Simulation with Scientific Machine Learning",
         authors:
-          "Nachiket N Naik, Prathamesh Dinesh Joshi, Raj Abhijit Dandekar, Rajat Dandekar, Sreedath Panat",
-        venue: "arXiv",
+          "Tirtha Tilak Pani, Prathamesh Dinesh Joshi, Raj Dandekar, Sreedath Panat, Rajat Dandekar",
+        venue:
+          "Second Workshop on XAI4Science: From Understanding Model Behavior to Discovering New Scientific Knowledge",
         year: 2025,
         abstract:
-          "Compares a fully learned Neural ODE against a physics-informed Universal Differential Equation that preserves conservation and order-up-to structure in supply chain dynamics, demonstrating SciML applications in operations research.",
-        arxivUrl: "https://arxiv.org/abs/2509.18105",
-        thumbnail: "/papers/bull-ode.png",
-        tags: ["Neural ODEs", "UDEs", "Supply Chain"],
+          "Climate simulation driven by Scientific Machine Learning, combining physics-based climate models with neural network components to enable scalable and interpretable climate forecasting.",
+        arxivUrl: "https://openreview.net/pdf?id=snAnszFhzv",
+        thumbnail: "/papers/climasim.png",
+        tags: ["SciML", "Climate", "XAI4Science"],
       },
       {
         title:
-          "Forecasting N-Body Dynamics: A Comparative Study of Neural ODEs and Universal Differential Equations",
+          "Forecasting N-Body Dynamics: A Comparative Study of Neural Ordinary Differential Equations and Universal Differential Equations",
         authors:
-          "Suriya R S, Prathamesh Dinesh Joshi, Rajat Dandekar, Raj Dandekar, Sreedath Panat",
-        venue: "arXiv",
+          "RS Suriya, Prathamesh Dinesh Joshi, Rajat Dandekar, Raj Dandekar, Sreedath Panat",
+        venue:
+          "Second Workshop on XAI4Science: From Understanding Model Behavior to Discovering New Scientific Knowledge",
         year: 2025,
         abstract:
-          "Compares Neural ODEs and UDEs for predicting gravitational n-body systems. Key finding: the UDE model is much more data efficient, needing only 20% of data for a correct forecast, whereas the Neural ODE requires 90%.",
-        arxivUrl: "https://arxiv.org/abs/2512.20643",
-        tags: ["Neural ODEs", "UDEs", "N-Body Physics"],
-      },
-      {
-        title:
-          "Modeling Chaotic Lorenz ODE System Using Scientific Machine Learning",
-        authors:
-          "Sameera S Kashyap, Raj Abhijit Dandekar, Rajat Dandekar, Sreedath Panat",
-        venue: "arXiv",
-        year: 2024,
-        abstract:
-          "Applies SciML methods to foundational weather models. Demonstrates that combining neural networks with physics-informed modeling enables high accuracy with reduced data in climate applications, moving from black-box approaches toward physics-informed decision-making.",
-        arxivUrl: "https://arxiv.org/abs/2410.06452",
-        thumbnail: "/papers/lorenz.png",
-        tags: ["SciML", "Chaos Theory", "Climate"],
-      },
-      {
-        title:
-          "Scientific Machine Learning in Ecological Systems: A Study on the Predator-Prey Dynamics",
-        authors:
-          "Ranabir Devgupta, Raj Abhijit Dandekar, Rajat Dandekar, Sreedath Panat",
-        venue: "arXiv",
-        year: 2024,
-        abstract:
-          "Applied Neural ODEs and UDEs to the Lotka-Volterra predator-prey model. UDEs outperform Neural ODEs by effectively recovering underlying dynamics and achieving accurate forecasting with significantly less training data. Introduces the forecasting breakdown point concept.",
-        arxivUrl: "https://arxiv.org/abs/2411.06858",
-        thumbnail: "/papers/predator-prey.png",
-        tags: ["UDEs", "Ecology", "Predator-Prey"],
-      },
-      {
-        title:
-          "A Comparative Study of NeuralODE and Universal ODE Approaches to Solving Chandrasekhar White Dwarf Equation",
-        authors:
-          "Raymundo Vazquez Martinez, Raj Abhijit Dandekar, Rajat Dandekar, Sreedath Panat",
-        venue: "arXiv",
-        year: 2024,
-        abstract:
-          "Applied Neural ODEs and UDEs to model the Chandrasekhar White Dwarf Equation using Julia. Identified the forecasting breakdown point and optimized neural network architectures, opening pathways for SciML applications across astrophysics.",
-        arxivUrl: "https://arxiv.org/abs/2410.14998",
-        tags: ["Neural ODEs", "UDEs", "Astrophysics"],
+          "A comparative study of Neural ODEs and Universal Differential Equations for forecasting N-body dynamics, evaluating how each approach captures gravitational interactions and long-horizon stability.",
+        arxivUrl: "https://openreview.net/pdf?id=nTCbEqff7e",
+        thumbnail: "/papers/nbody-dynamics.png",
+        tags: ["Neural ODEs", "UDEs", "N-Body Dynamics"],
       },
       {
         title:
           "EARS-UDE: Evaluating Auditory Response in Sensory Overload with Universal Differential Equations",
         authors:
           "Miheer Salunke, Prathamesh Dinesh Joshi, Raj Abhijit Dandekar, Rajat Dandekar, Sreedath Panat",
-        venue: "arXiv",
+        venue: "NeurIPS Workshop",
         year: 2025,
         abstract:
-          "A SciML framework using UDEs to model sensory adaptation dynamics in autism. Demonstrates 90.8% improvement over pure Neural ODEs while using 73.5% fewer parameters, recovering physiological parameters with minimal error.",
+          "Uses Universal Differential Equations to model auditory response under sensory overload, combining known neural dynamics with learned components to characterize perceptual thresholds.",
         arxivUrl: "https://arxiv.org/abs/2510.26804",
         thumbnail: "/papers/ears-ude.png",
-        tags: ["UDEs", "Biophysics", "Healthcare"],
+        badge: "Spotlight",
+        tags: ["UDEs", "Auditory", "Neuroscience"],
       },
       {
         title:
-          "Physical Informed Neural Networks for Modeling Ocean Pollutant",
+          "Physics-Informed Learning Near Critical Transitions: A Comparative Study of UDEs and Neural ODEs",
         authors:
-          "Karishma Battina, Prathamesh Dinesh Joshi, Raj Abhijit Dandekar, Rajat Dandekar, Sreedath Panat",
-        venue: "arXiv",
+          "Urvi Mahendra Bora, Prathamesh Dinesh Joshi, Raj Dandekar, Rajat Dandekar, Sreedath Panat",
+        venue: "NeurIPS AI for Science Workshop",
         year: 2025,
         abstract:
-          "Applies PINNs to simulate pollutant dispersion governed by the 2D advection-diffusion equation. Embeds physical laws directly into neural network training while fitting synthetic noisy data, providing a scalable alternative to traditional solvers for oceanographic modeling.",
-        arxivUrl: "https://arxiv.org/abs/2507.08834",
+          "A comparative study of Universal Differential Equations and Neural ODEs in modeling systems near critical transitions, analyzing how physics-informed priors improve stability and forecasting near tipping points.",
+        arxivUrl: "https://openreview.net/pdf?id=kG26ovLE9l",
+        thumbnail: "/papers/critical-transitions.png",
+        tags: ["UDEs", "Neural ODEs", "Critical Transitions"],
+      },
+      {
+        title:
+          "Physics-Informed Neural Networks for Modeling Ocean Pollutant",
+        authors:
+          "Karishma Battina, Prathamesh Dinesh Joshi, Raj Abhijit Dandekar, Rajat Dandekar, Sreedath Panat",
+        venue: "JuliaCon",
+        year: 2025,
+        abstract:
+          "Applies PINNs to simulate ocean pollutant dispersion governed by the 2D advection-diffusion equation, embedding physical laws directly into neural network training for scalable oceanographic modeling.",
+        arxivUrl: "https://arxiv.org/pdf/2507.08834",
         thumbnail: "/papers/ocean-pinn.png",
         tags: ["PINNs", "Oceanography", "PDEs"],
       },
@@ -691,46 +690,110 @@ export const bootcampConfig: BootcampConfig = {
   },
 
   testimonials: {
-    label: "Student Testimonials",
-    title: "What Our Students Say",
+    label: "From the Community",
+    title: "Stories from our researchers",
     subtitle:
-      "Hear from researchers, engineers, and scientists who have transformed their work with Scientific ML.",
+      "Milestones, acceptances, and moments shared by Vizuara students and alumni on LinkedIn.",
     items: [
       {
-        quote:
-          "This bootcamp was one of the most complete and intuition-building journeys I have taken. The way PINNs and UDEs were explained with hands-on Julia code made the concepts click instantly.",
-        name: "Priya Sharma",
-        role: "PhD Student, Computational Physics",
+        name: "Pranav Ramanathan",
+        role: "Incoming Intern, Amazon · Queen Mary University of London",
+        fullPost: `This summer, I set out to see if modern AI could crack the No-Three-in-Line problem, a combinatorial challenge that's remained open since 1917.
+
+Today, I'm excited to share that our research is now live on arXiv.
+
+The No-Three-in-Line problem asks a deceptively simple question: given an n×n grid, what's the maximum number of points you can place such that no three are collinear? The theoretical upper bound is 2n points, but finding configurations that achieve this becomes increasingly difficult as grids grow larger.
+
+We tested three approaches head-to-head. Integer Linear Programming (Gurobi) achieved provably optimal solutions up to 19×19. PatternBoost, using transformer-based pattern learning, matched the 2n upper bound up to 14×14 despite never seeing optimal examples during training. Reinforcement learning (PPO) cracked 10×10 grids perfectly but stumbled at 11×11, making one fatal violation. You can watch it unfold below. The verdict? Classical optimisation still wins, but AI is catching up.
+
+This paper wouldn't exist without the incredible people who believed in this work:
+
+Thomas Prellberg and Matthew Lewis at QMUL School of Mathematical Sciences, whose guidance shaped every aspect of this research.
+
+The team at Vizuara Technologies Private Limited: PRATHAMESH JOSHI, Raj Abhijit Dandekar, Rajat Dandekar, Sreedath Panat, for their collaboration and expertise in Scientific Machine Learning. More to come on that in 2026!
+
+Caroline B. and the Broad Associates team, for the professional development that made STRIDE such a formative experience. And to the entire STRIDE programme team, thank you for making this possible.
+
+As 2025 comes to a close, I'm grateful for a year of learning, building, and discovering. Here's to pushing the boundaries of what AI can do for mathematics in 2026.
+
+Paper: https://lnkd.in/e8GKqGBs
+
+#MachineLearning #ReinforcementLearning #Transformers #DeepLearning #Research #Mathematics #CombinatorialOptimisation`,
+        linkedinUrl:
+          "https://www.linkedin.com/posts/pranav-ramanathan_machinelearning-reinforcementlearning-transformers-ugcPost-7409888251085373440-Dnv-",
+        embedUrl:
+          "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7409888251085373440",
       },
       {
-        quote:
-          "A rare combo of research-grade depth and crystal-clear teaching. I went from knowing nothing about Julia to building Neural ODE models for my chemical engineering research in just four weeks.",
-        name: "Arun Venkatesh",
-        role: "Chemical Engineer, R&D",
+        name: "GVV Satyanarayana Raju",
+        role: "ex Chief Project Manager · IIIT Hyderabad",
+        fullPost: `The SciML is an amazing area and I liked it very much. Started the bootcamp by Vizuara AI Labs without any knowledge about the SciML and the bootcamp gave me enough confidence to apply to my research domain. I had applied SciML in Sustainable Agriculture for prediction of SOC using UDE, and it was published in arXiv and the abstract was accepted in EGU26. The course material, videos and assignments were very helpful. Dr. Raj Dandekar and Mr. Prathamesh were very helpful through out the journey, but the heavy lifting has to be done by the participants. The curiosity of the participant in learning SciML keeps him/her in good stead. The bootcamp is highly recommended for the participants to build a great graduate/researcher profile.`,
       },
       {
-        quote:
-          "The COVID-19 modeling project was a game-changer for my understanding of how to combine data with domain knowledge. I now use UDEs in my ecology research to model population dynamics.",
-        name: "Maria Gonzalez",
-        role: "Postdoctoral Researcher, Ecology",
+        name: "Kavya Subramanian",
+        role: "Boston University",
+        fullPost: `The Vizuara SciML Research Bootcamp gave me a strong foundation in Scientific Machine Learning and, more importantly, taught me how to think and operate like a researcher. It strikes a balance between leading your work and developing ideas independently, while receiving timely, constructive guidance from deeply knowledgeable mentors.
+
+The structured coursework and assignments at the beginning gave me a deep understanding of core SciML concepts. As the program progressed, that foundation translated directly into original research which resulted in a first-author preprint as well as a talk and a poster presentation at multiple conferences.
+
+I'm really grateful for the mentorship I received throughout, and would like to thank Dr. Raj, Dr. Rajat, Dr. Sreedath, and especially Prathamesh for their continued support and encouragement.`,
       },
       {
-        quote:
-          "As a data scientist, I was used to black-box models. This bootcamp taught me how to build models that actually respect physical constraints, and the results are far more reliable.",
-        name: "Daniel Kim",
-        role: "Senior Data Scientist, Energy Sector",
+        name: "Ashutosh Shukla",
+        role: "Software Engineer at Optum",
+        fullPost: `I am excited to share that last week from August 4th-8th, I had the opportunity of presenting a poster at the Mathematical and Scientific Machine Learning (MSML) 2025 conference held in Naples, Italy.
+
+I had the pleasure of presenting my research "Modeling Stellar Structure with Scientific Machine Learning".
+
+I am deeply grateful to my mentors — Raj Abhijit Dandekar, Rajat Dandekar, Sreedath Panat, and PRATHAMESH JOSHI — for introducing me to the world of Scientific Machine Learning and for their constant guidance throughout this journey.`,
+        linkedinUrl:
+          "https://www.linkedin.com/posts/ashutosh-shukla15_i-am-excited-to-share-that-last-week-from-activity-7362048966315659264-6IGm",
+        embedUrl:
+          "https://www.linkedin.com/embed/feed/update/urn:li:activity:7362048966315659264",
       },
       {
-        quote:
-          "The instructors are genuine experts. Their explanations of adjoint methods and symbolic regression were the best I have encountered. Worth every rupee.",
-        name: "Rohan Kapoor",
-        role: "MS Student, Applied Mathematics",
+        name: "Miheer Salunke",
+        role: "Principal Software Engineer at Red Hat · Australia",
+        fullPost: `I just had a very nice spotlight poster session for our research paper at AI For Science workshop at NeurIPS 2025. People were amazed to see our innovation where training some parts of the mathematical equations we curated referring exisiting literature can evaluate individual specific sensory parameters and thereby predict auditory overload of the individual and how the response calculated matched with the ground truth.
+
+People understood that we dont always complex models and that we can start from basics and then evolve our models as per the use case.
+
+Our Universal Differential Equation model used very low resources.
+For example: 5mb of memory was used throughout the training which allows us this model to be used on wearables.
+
+I felt very happy when people called this as an interesting innovation.
+I hope this research helps autistic people and neurodivergent people. I sincerely hope people start researching AI more for the benefit of disabled people.
+
+Research paper: https://lnkd.in/gq6dgnpb
+
+More work is to be done to get this implemented for real world but we will make it happen.
+
+Special Thanks to Raj Abhijit Dandekar and PRATHAMESH JOSHI for the guidance and review of the paper.
+
+Also met an AI industry expert and entrepreneur Javier A. Garcia Sedano who gave me a very valuable guidance.`,
+        linkedinUrl:
+          "https://www.linkedin.com/posts/miheer-salunke-377a9428_i-just-had-a-very-nice-spotlight-poster-session-activity-7403554568787406848-az77",
+        embedUrl:
+          "https://www.linkedin.com/embed/feed/update/urn:li:activity:7403554568787406848",
       },
       {
-        quote:
-          "I attended the SciML bootcamp and then got admitted to CMU for my PhD. The research projects in this bootcamp gave me concrete examples to discuss in my interviews.",
-        name: "Sneha Iyer",
-        role: "PhD Admit, Carnegie Mellon University",
+        name: "Karishma Battina",
+        role: "Senior DevOps Engineer · Commerce, United States",
+        fullPost: `I'm happy to share that I'll be presenting my research on Physics-Informed Neural Networks (PINNs) for Ocean Pollutant Modeling at JuliaCon 2026 — where researchers and developers collaborate to push Scientific Computing forward!
+
+Using Julia's powerful ecosystem, I developed a PINN-based framework to solve the 2D advection-diffusion equation, enabling fast and accurate predictions of oceanic pollution hotspots. Key highlights include:
+• Hyperparameter optimization for robust performance
+• Computational efficiency (PINNs vs. traditional solvers)
+
+When I initially explored Scientific Machine Learning, my goal was to work on solutions with real-world impact and tangible benefits. Huge thanks to my mentors, PRATHAMESH JOSHI, Raj Abhijit Dandekar, Rajat Dandekar, Sreedath Panat, Vizuara Technologies Private Limited team, who have been instrumental in shaping this research.
+
+Looking forward to sharing our findings and connecting with fellow researchers at JuliaCon 2025!
+
+#SciML #JuliaLang #JuliaCon2025 #PINNs`,
+        linkedinUrl:
+          "https://www.linkedin.com/posts/karishma-battina-071589ab_physics-informed-neural-network-for-ocean-activity-7338693187625959427-nbrH",
+        embedUrl:
+          "https://www.linkedin.com/embed/feed/update/urn:li:activity:7338693187625959427",
       },
     ],
   },
@@ -854,6 +917,16 @@ export const bootcampConfig: BootcampConfig = {
           "Yes. Students who complete the Researcher Plan or Industry Professional Plan and submit all assignments receive a certificate of completion from Vizuara AI Labs.",
       },
       {
+        question: "Does Vizuara cover conference registration or journal publication fees?",
+        answer:
+          "No. Vizuara does not cover conference registration fees or journal publication charges. If a participant chooses to attend a conference in person or publish in an open-access journal, the participant is responsible for bearing these costs themselves.",
+      },
+      {
+        question: "Does the bootcamp cover computational costs?",
+        answer:
+          "No. Compute costs are not included in the bootcamp fee. We recommend participants use free resources such as Google Colab or Kaggle free GPUs. If a participant's research project requires additional compute, they are free to switch to a paid platform of their choice, but the associated cost must be borne by the participant.",
+      },
+      {
         question: "What is the refund policy?",
         answer:
           "We do not offer refunds. Please review the curriculum, watch the free introduction video, and explore the Community Plan before purchasing a paid plan to ensure the bootcamp is right for you.",
@@ -874,7 +947,7 @@ export const bootcampConfig: BootcampConfig = {
   footer: {
     tagline:
       "Vizuara AI Labs: Making AI accessible through research-grade education. Founded by MIT and Purdue AI PhDs.",
-    email: "sreedath@vizuara.ai",
+    email: "research@vizuara.com",
     socialLinks: [
       {
         iconName: "Linkedin",
@@ -888,9 +961,94 @@ export const bootcampConfig: BootcampConfig = {
       },
       {
         iconName: "Mail",
-        href: "mailto:sreedath@vizuara.ai",
+        href: "mailto:research@vizuara.com",
         label: "Email",
       },
     ],
   },
+};
+
+export const venuesConfig: VenuesMarqueeConfig = {
+  label: "Accepted Venues",
+  title: "Where Our Researchers Publish & Present",
+  subtitle:
+    "SciML research from our cohorts has been accepted, presented, and archived across leading venues in machine learning, scientific computing, and applied AI.",
+  venues: [
+    { name: "NeurIPS", logo: "/venues/neurips.png" },
+    { name: "ICLR", logo: "/venues/iclr.png" },
+    { name: "AAAI", logo: "/venues/aaai.png" },
+    { name: "ACM", logo: "/venues/acm.png" },
+    { name: "JuliaCon", logo: "/venues/juliacon.png" },
+    { name: "IEEE eScience", logo: "/venues/escience.png" },
+    { name: "EGU General Assembly", logo: "/venues/egu.png" },
+    { name: "FastML", logo: "/venues/fastml.png" },
+    { name: "MIT URTC", logo: "/venues/mit-urtc.png" },
+    { name: "arXiv", logo: "/venues/arxiv.png" },
+    { name: "EMNLP", logo: "/venues/emnlp.png" },
+  ],
+};
+
+export const marketStatsConfig: MarketStatsSectionConfig = {
+  label: "The SciML Boom",
+  title: "Scientific ML Is Moving From Research to Infrastructure",
+  subtitle:
+    "Physics-Informed AI and SciML are shifting from academic papers to foundational infrastructure for engineering and science. Here is why the 2024-2026 window matters.",
+  items: [
+    {
+      iconName: "TrendingUp",
+      value: "$280B+",
+      description:
+        "Projected ML market by 2030, up from ~$55-75B in 2024 (CAGR above 30%), with SciML emerging as a key industrial segment.",
+      source: "Market Research",
+      sourceHref: "https://grandviewresearch.com/industry-analysis/machine-learning-market",
+    },
+    {
+      iconName: "Zap",
+      value: "NVIDIA Modulus",
+      description:
+        "Standardized SciML infrastructure for Physics-Informed Neural Networks and neural operators, accelerating industrial adoption.",
+      source: "NVIDIA",
+      sourceHref: "https://developer.nvidia.com/modulus",
+    },
+    {
+      iconName: "Database",
+      value: "Less Data, More Physics",
+      description:
+        "SciML models embed conservation laws and physical constraints directly, cutting data requirements drastically versus traditional ML.",
+      source: "Physics-Informed Neural Networks",
+      sourceHref: "https://en.wikipedia.org/wiki/Physics-informed_neural_networks",
+    },
+    {
+      iconName: "Building2",
+      value: "Jobs at High-Tech Companies",
+      description:
+        "Companies like Amazon and Microsoft have dedicated AI-for-Science divisions, and firms such as HCLTech are actively hiring specialists in PINNs and SciML.",
+      source: "View HCLTech PINN Role",
+      sourceHref: "https://www.linkedin.com/jobs/view/physics-informed-neural-network-at-hcltech-4382890332/",
+    },
+  ],
+};
+
+export const contactConfig: ContactSectionConfig = {
+  heading: "Have more queries?",
+  subtitle:
+    "Reach out to our team on email for any questions about the bootcamp, curriculum, or application process.",
+  email: "research@vizuara.com",
+  leadScientist: {
+    name: "Prathamesh Joshi",
+    title: "Lead AI Scientist · Vizuara AI Labs",
+    intro:
+      "If the email discussion goes well and we find the candidate genuinely interested in research, we also provide a 1-on-1 15-minute talk with our Lead AI Scientist, Prathamesh Joshi.",
+    bio: "Prathamesh Joshi is a Lead AI Scientist at Vizuara AI Labs, with prior experience at the Max Planck Institute, Germany. His expertise spans Generative AI and Scientific Machine Learning, with a strong publication record across ICLR Workshops, IEEE conferences, and other top venues. He has also mentored students through intensive bootcamps, guiding them toward publications at NeurIPS Workshops, ICLR, JuliaCon, and AAAI Workshops.",
+    photo: "/team/prathamesh-joshi.png",
+  },
+};
+
+export const nextCohortConfig: NextCohortPopupConfig = {
+  startDate: "2026-04-27",
+  cadenceDays: 15,
+  message: "Join the next batch of the SciML Research Bootcamp",
+  ctaLabel: "Enroll Now",
+  ctaHref: "https://sciml-research.vizuara.ai/#pricing",
+  delayMs: 2500,
 };

@@ -1,10 +1,12 @@
 import {
   AlertTriangle,
   ArrowRight,
+  Atom,
   BarChart3,
   BookOpen,
   Bot,
   Brain,
+  BrainCircuit,
   Briefcase,
   Calendar,
   CalendarClock,
@@ -17,6 +19,7 @@ import {
   FileText,
   FlaskConical,
   Gauge,
+  GitBranch,
   Github,
   GraduationCap,
   Hammer,
@@ -38,16 +41,22 @@ import {
   X,
   Zap,
   MessageSquare,
+  Users,
+  TrendingUp,
+  DollarSign,
+  Building2,
   type LucideIcon,
 } from "lucide-react";
 
 const iconMap: Record<string, LucideIcon> = {
   AlertTriangle,
   ArrowRight,
+  Atom,
   BarChart3,
   BookOpen,
   Bot,
   Brain,
+  BrainCircuit,
   Briefcase,
   Calendar,
   CalendarClock,
@@ -60,6 +69,7 @@ const iconMap: Record<string, LucideIcon> = {
   FileText,
   FlaskConical,
   Gauge,
+  GitBranch,
   Github,
   GraduationCap,
   Hammer,
@@ -81,6 +91,10 @@ const iconMap: Record<string, LucideIcon> = {
   X,
   Zap,
   MessageSquare,
+  Users,
+  TrendingUp,
+  DollarSign,
+  Building2,
 };
 
 export function resolveIcon(name: string): LucideIcon {

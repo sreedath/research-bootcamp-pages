@@ -25,6 +25,14 @@ export { default as PricingSection } from "./components/sections/PricingSection"
 export { default as FAQSection } from "./components/sections/FAQSection";
 export { default as CTABanner } from "./components/sections/CTABanner";
 export { default as Footer } from "./components/sections/Footer";
+export { default as VenuesMarquee } from "./components/sections/VenuesMarquee";
+export type { VenuesMarqueeConfig, VenueItem } from "./components/sections/VenuesMarquee";
+export { default as MarketStatsSection } from "./components/sections/MarketStatsSection";
+export type { MarketStatsSectionConfig, MarketStatItem } from "./components/sections/MarketStatsSection";
+export { default as NextCohortPopup } from "./components/sections/NextCohortPopup";
+export type { NextCohortPopupConfig } from "./components/sections/NextCohortPopup";
+export { default as ContactSection } from "./components/sections/ContactSection";
+export type { ContactSectionConfig } from "./components/sections/ContactSection";
 
 // Theme
 export { default as ThemeProvider, useTheme } from "./components/ThemeProvider";

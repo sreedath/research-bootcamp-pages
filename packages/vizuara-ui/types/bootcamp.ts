@@ -180,9 +180,17 @@ export interface PastWorkshopsSectionConfig {
 }
 
 export interface TestimonialItem {
-  quote: string;
+  quote?: string;
+  /** Full LinkedIn post text (preserves line breaks). Takes priority over `quote` when present. */
+  fullPost?: string;
   name: string;
   role: string;
+  linkedinUrl?: string;
+  /** LinkedIn embed URL for iframe embedding. If present, renders as an embedded post. */
+  embedUrl?: string;
+  screenshot?: string;
+  /** Bento-grid size. Defaults to "sm" (1×1). */
+  size?: "sm" | "md" | "wide" | "tall" | "lg";
 }
 
 export interface TestimonialsSectionConfig {
@@ -241,6 +249,7 @@ export interface ResearchPaper {
   codeUrl?: string;
   tags: string[];
   thumbnail?: string;
+  badge?: string;
 }
 
 export interface ResearchPapersSectionConfig {

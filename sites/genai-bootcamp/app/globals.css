@@ -1,0 +1,50 @@
+@import "@vizuara/ui/styles/globals.css";
+@source "../../../packages/vizuara-ui/components";
+@source "../../../packages/vizuara-ui/utils";
+
+/* GenAI Theme: Blue + Indigo */
+:root {
+  --primary: #2563eb;
+  --primary-foreground: #ffffff;
+  --secondary: #4f46e5;
+  --accent: #4f46e5;
+  --ring: #2563eb;
+  --glow-opacity: 0.1;
+}
+
+.dark {
+  --primary: #60a5fa;
+  --primary-foreground: #000000;
+  --secondary: #818cf8;
+  --accent: #818cf8;
+  --ring: #60a5fa;
+  --glow-opacity: 0.18;
+}
+
+/* Override glow effects for blue */
+.glow-green {
+  box-shadow: 0 0 20px rgba(37, 99, 235, var(--glow-opacity)),
+    0 0 60px rgba(37, 99, 235, calc(var(--glow-opacity) / 3));
+}
+
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(79, 70, 229, var(--glow-opacity)),
+    0 0 60px rgba(79, 70, 229, calc(var(--glow-opacity) / 3));
+}
+
+.glow-green-strong {
+  box-shadow: 0 0 30px rgba(37, 99, 235, calc(var(--glow-opacity) * 1.7)),
+    0 0 80px rgba(37, 99, 235, calc(var(--glow-opacity) * 0.7));
+}
+
+.hover-glow-green:hover {
+  box-shadow: 0 0 25px rgba(37, 99, 235, var(--glow-opacity)),
+    0 0 50px rgba(37, 99, 235, calc(var(--glow-opacity) / 2));
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
