@@ -1,6 +1,6 @@
 {
   "framework": null,
   "installCommand": "cd ../.. && npm install",
-  "buildCommand": "next build",
+  "buildCommand": "cd ../.. && npm run build --workspace=ml-dl-bootcamp",
   "outputDirectory": "out"
 }
